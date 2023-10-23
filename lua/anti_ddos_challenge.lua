@@ -75,7 +75,7 @@ local remote_addr = ngx.var.remote_addr .. ngx.var.http_user_agent
 remote_addr = "tor" this will mean this script will be functioning for tor users only
 remote_addr = "auto" the script will automatically get the clients IP this is the default it is the smartest and most compatible method with every service proxy etc
 ]]
-local remote_addr = "auto" --Default Automatically get the Clients IP address
+local remote_addr = "tor" --Default Automatically get the Clients IP address
 
 --[[
 How long when a users request is authenticated will they be allowed to browse and access the site until they will see the auth page again.
@@ -90,7 +90,7 @@ One month: 2628000
 One year: 31536000
 Ten years: 315360000
 ]]
-local expire_time = 86400 --One day
+local expire_time = 30 --One day
 
 --[[
 The type of javascript based pingback authentication method to use if it should be GET or POST or can switch between both making it as dynamic as possible.
@@ -98,7 +98,7 @@ The type of javascript based pingback authentication method to use if it should 
 2 = POST
 3 = DYNAMIC
 ]]
-local javascript_REQUEST_TYPE = 2 --Default 2
+local javascript_REQUEST_TYPE = 3 --Default 2
 
 --[[
 Timer to refresh auth page
